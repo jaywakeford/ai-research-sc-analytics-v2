@@ -74,32 +74,34 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
 
   return (
     <div className="pdf-viewer">
-      {loading && <div>Loading PDF...</div>}
-      {error && (
-        <div className="error-container">
-          <div className="error-message">Error loading PDF: {error}</div>
-          <div className="error-details">File: {fullPath}</div>
-        </div>
-      )}
-      
-      {!error && (
-        <Document
-          file={fullPath}
-          onLoadSuccess={onDocumentLoadSuccess}
-          onLoadError={onDocumentLoadError}
-          loading={<div>Loading PDF...</div>}
-          error={<div>Failed to load PDF. Please try again.</div>}
-        >
-          <Page 
-            key={`page_${pageNumber}`}
-            pageNumber={pageNumber} 
-            loading={<div>Loading page...</div>}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            error={<div>Error loading page {pageNumber}</div>}
-          />
-        </Document>
-      )}
+      <div className="pdf-content">
+        {loading && <div>Loading PDF...</div>}
+        {error && (
+          <div className="error-container">
+            <div className="error-message">Error loading PDF: {error}</div>
+            <div className="error-details">File: {fullPath}</div>
+          </div>
+        )}
+        
+        {!error && (
+          <Document
+            file={fullPath}
+            onLoadSuccess={onDocumentLoadSuccess}
+            onLoadError={onDocumentLoadError}
+            loading={<div>Loading PDF...</div>}
+            error={<div>Failed to load PDF. Please try again.</div>}
+          >
+            <Page 
+              key={`page_${pageNumber}`}
+              pageNumber={pageNumber} 
+              loading={<div>Loading page...</div>}
+              renderTextLayer={false}
+              renderAnnotationLayer={false}
+              error={<div>Error loading page {pageNumber}</div>}
+            />
+          </Document>
+        )}
+      </div>
 
       {!loading && !error && numPages > 0 && (
         <div className="pdf-controls">
@@ -131,6 +133,17 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           gap: 1rem;
           padding: 1rem;
           min-height: 500px;
+          position: relative;
+          height: 100%;
+        }
+        .pdf-content {
+          flex: 1;
+          overflow-y: auto;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 60px; /* Space for controls */
         }
         .error-container {
           display: flex;
@@ -151,7 +164,14 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           display: flex;
           gap: 1rem;
           align-items: center;
-          margin-top: 1rem;
+          padding: 1rem;
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 8px;
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 50;
         }
         button {
           padding: 0.5rem 1rem;
@@ -168,6 +188,9 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
         button:disabled {
           background: #ccc;
           cursor: not-allowed;
+        }
+        span {
+          color: white;
         }
       `}</style>
     </div>

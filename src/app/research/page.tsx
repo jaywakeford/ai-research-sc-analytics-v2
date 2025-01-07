@@ -84,7 +84,7 @@ export default function ResearchPage() {
                   ))}
                 </div>
               </div>
-              <div className="h-[800px] mb-6 relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div className="pdf-container relative bg-white dark:bg-gray-800 rounded-lg">
                 <PdfViewer pdfUrl={selectedPaper.pdfUrl} />
               </div>
             </div>
@@ -111,3 +111,12 @@ export default function ResearchPage() {
     </main>
   );
 } 
+
+<style jsx>{`
+  .pdf-container {
+    height: 800px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+`}</style> 
