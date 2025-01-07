@@ -1,10 +1,5 @@
-const getBasePath = () => {
-  if (typeof window === 'undefined') {
-    return process.env.NODE_ENV === 'production' ? '/ai-research-sc-analytics-v2' : '';
-  }
-  return window.location.pathname.startsWith('/ai-research-sc-analytics-v2') 
-    ? '/ai-research-sc-analytics-v2' 
-    : '';
+export const getBasePath = () => {
+  return process.env.NODE_ENV === 'production' ? '/ai-research-sc-analytics-v2' : '';
 };
 
 export const getMediaPath = (path: string): string => {
@@ -27,12 +22,12 @@ export const getPdfPath = (path: string): string => {
 
 export const getAudioPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path : `/audio/${path}`;
-  return `${basePath}${cleanPath}`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${basePath}/${cleanPath}`;
 };
 
 export const getVideoPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path : `/videos/${path}`;
-  return `${basePath}${cleanPath}`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${basePath}/${cleanPath}`;
 }; 

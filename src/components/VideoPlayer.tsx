@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { getVideoPath } from '@/utils/paths';
 
 interface VideoPlayerProps {
@@ -21,7 +21,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [retryCount, setRetryCount] = useState(0);
   const fullPath = getVideoPath(videoUrl);
+
+  useEffect(() => {
+    // Reset error state when retrying
+    if (retryCount > 0) {
+      setError(null);
+      setLoading(true);
+    }
+  }, [retryCount]);
 
   const handleLoadedData = () => {
     setLoading(false);
@@ -29,9 +38,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   };
 
   const handleError = () => {
-    console.error('Video error:', videoRef.current?.error);
+    const videoError = videoRef.current?.error;
+    console.error('Video error:', videoError);
     setError('Failed to load video. Please try refreshing the page.');
     setLoading(false);
+  };
+
+  const handleRetry = () => {
+    setRetryCount(prev => prev + 1);
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
   };
 
   return (
@@ -47,7 +64,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           <div className="flex flex-col items-center justify-center p-8 text-center">
             <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
             <button
-              onClick={() => window.location.reload()}
+              onClick={handleRetry}
               className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors"
             >
               Retry
@@ -56,6 +73,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         ) : (
           <div className="relative aspect-video">
             <video
+              key={retryCount} // Force remount on retry
               ref={videoRef}
               className="w-full h-full"
               controls

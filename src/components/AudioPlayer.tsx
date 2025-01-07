@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import H5AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
 import { getAudioPath } from '@/utils/paths';
 
 interface AudioPlayerProps {
@@ -10,83 +8,79 @@ interface AudioPlayerProps {
   title: string;
 }
 
-export default function AudioPlayer({ src, title }: AudioPlayerProps) {
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title }) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const playerRef = useRef<H5AudioPlayer>(null);
+  const [retryCount, setRetryCount] = useState(0);
   const fullPath = getAudioPath(src);
 
   useEffect(() => {
-    console.log('Audio player mounted with path:', fullPath);
-    setLoading(false);
-  }, [fullPath]);
+    // Reset error state when retrying
+    if (retryCount > 0) {
+      setError(null);
+      setLoading(true);
+    }
+  }, [retryCount]);
 
-  const handleError = (e: any) => {
-    console.error('Audio loading error:', e);
-    console.error('Audio element:', playerRef.current);
-    console.error('Attempted path:', fullPath);
-    setError('Failed to load audio. Please check console for details.');
-    setLoading(false);
-  };
-
-  const handleLoadStart = () => {
-    console.log('Audio loading started');
-    setLoading(true);
-  };
-
-  const handleCanPlay = () => {
-    console.log('Audio can play');
+  const handleLoadedData = () => {
     setLoading(false);
     setError(null);
   };
 
+  const handleError = () => {
+    const audioError = audioRef.current?.error;
+    console.error('Audio error:', audioError);
+    setError('Failed to load audio. Please try refreshing the page.');
+    setLoading(false);
+  };
+
+  const handleRetry = () => {
+    setRetryCount(prev => prev + 1);
+    if (audioRef.current) {
+      audioRef.current.load();
+    }
+  };
+
   return (
-    <div className="glass-card p-6">
-      <h3 className="text-xl font-semibold mb-4 gradient-text">{title}</h3>
-      <div className="space-y-4">
-        {error ? (
-          <div className="text-red-500">
-            {error}
-            <div className="text-sm mt-2">
-              Attempted to load: {fullPath}
+    <div className="w-full">
+      <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+        {title}
+      </h3>
+      
+      {error ? (
+        <div className="flex flex-col items-center justify-center p-4 text-center bg-red-50 dark:bg-red-900/20 rounded-lg">
+          <p className="text-red-600 dark:text-red-400 mb-2">{error}</p>
+          <button
+            onClick={handleRetry}
+            className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors text-sm"
+          >
+            Retry
+          </button>
+        </div>
+      ) : (
+        <div className="relative">
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-gray-800 bg-opacity-90 z-10 rounded-lg">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600"></div>
             </div>
-          </div>
-        ) : (
-          <div className="relative">
-            {loading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-              </div>
-            )}
-            <H5AudioPlayer
-              ref={playerRef}
-              src={fullPath}
-              onError={handleError}
-              onLoadStart={handleLoadStart}
-              onCanPlay={handleCanPlay}
-              autoPlay={false}
-              autoPlayAfterSrcChange={false}
-              showJumpControls={true}
-              showFilledVolume={true}
-              customProgressBarSection={[
-                RHAP_UI.PROGRESS_BAR,
-                RHAP_UI.CURRENT_TIME,
-                RHAP_UI.VOLUME
-              ]}
-              customControlsSection={[
-                RHAP_UI.MAIN_CONTROLS,
-                RHAP_UI.LOOP,
-                RHAP_UI.VOLUME,
-                RHAP_UI.PROGRESS_BAR,
-              ]}
-              style={{
-                background: 'transparent',
-                boxShadow: 'none',
-              }}
-            />
-          </div>
-        )}
-      </div>
+          )}
+          <audio
+            key={retryCount} // Force remount on retry
+            ref={audioRef}
+            className="w-full"
+            controls
+            preload="auto"
+            onLoadedData={handleLoadedData}
+            onError={handleError}
+          >
+            <source src={fullPath} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      )}
     </div>
   );
-} 
+};
+
+export default AudioPlayer; 

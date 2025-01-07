@@ -5,7 +5,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+pdfjs.GlobalWorkerOptions.workerSrc = '/ai-research-sc-analytics-v2/pdf.worker.min.js';
 
 interface PdfViewerProps {
   pdfUrl: string;
@@ -14,9 +14,42 @@ interface PdfViewerProps {
 const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl }) => {
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [error, setError] = useState<string | null>(null);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages);
+    setError(null);
+  }
+
+  function onDocumentLoadError(err: Error): void {
+    console.error('Error loading PDF:', err);
+    setError('Failed to load PDF file. Please try refreshing the page.');
+  }
+
+  if (error) {
+    return (
+      <div className="pdf-error">
+        <p>{error}</p>
+        <button onClick={() => window.location.reload()}>Retry</button>
+        <style jsx>{`
+          .pdf-error {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 8px;
+          }
+          button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #0070f3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        `}</style>
+      </div>
+    );
   }
 
   return (
@@ -24,6 +57,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl }) => {
       <Document
         file={pdfUrl}
         onLoadSuccess={onDocumentLoadSuccess}
+        onLoadError={onDocumentLoadError}
         options={{
           cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/cmaps/',
           cMapPacked: true,
@@ -33,6 +67,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl }) => {
           pageNumber={pageNumber} 
           renderTextLayer={false}
           renderAnnotationLayer={false}
+          error="Failed to load page. Please try refreshing."
         />
       </Document>
       <div className="pdf-controls">
