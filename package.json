@@ -4,9 +4,10 @@
   "private": true,
   "homepage": "https://jaywakeford.github.io/ai-research-sc-analytics-v2",
   "scripts": {
-    "dev": "next dev -p 3001",
-    "build": "next build && next export",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "clean": "rimraf .next out",
     "deploy": "gh-pages -d out -b gh-pages"
   },
