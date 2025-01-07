@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          lfs: true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -39,9 +41,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install sharp
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          npm run clean || true
+          npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
