@@ -29,6 +29,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+          fetch-depth: 0
       
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,16 +37,25 @@ jobs:
           node-version: "18"
           cache: npm
           
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
       - name: Install dependencies
         run: |
-          npm install
+          npm ci
           npm install sharp --force
           
       - name: Build
         run: |
+          npm run clean || true
           npm run build
         env:
           NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+          
+      - name: Fix permissions
+        run: |
+          chmod -R a+r out
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
