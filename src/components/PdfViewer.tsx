@@ -135,6 +135,7 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           min-height: 500px;
           position: relative;
           height: 100%;
+          max-height: calc(100% - 80px); /* Leave space for controls */
         }
         .pdf-content {
           flex: 1;
@@ -143,7 +144,8 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-bottom: 60px; /* Space for controls */
+          max-height: calc(100% - 80px); /* Ensure content doesn't overflow */
+          margin-bottom: 70px; /* Increased space for controls */
         }
         .error-container {
           display: flex;
@@ -168,11 +170,12 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           background: rgba(0, 0, 0, 0.8);
           border-radius: 8px;
           position: absolute;
-          bottom: 20px;
+          bottom: 10px;
           left: 50%;
           transform: translateX(-50%);
           z-index: 10;
           width: auto;
+          min-width: 300px; /* Ensure minimum width for controls */
         }
         button {
           padding: 0.5rem 1rem;

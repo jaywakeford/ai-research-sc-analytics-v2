@@ -118,5 +118,7 @@ export default function ResearchPage() {
     margin-bottom: 2rem;
     position: relative;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 `}</style> 
