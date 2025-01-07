@@ -1,16 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/ai-research-sc-analytics-v2',
-  assetPrefix: '/ai-research-sc-analytics-v2/',
-  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   webpack: (config) => {
-    config.resolve.alias.canvas = false;
-    return config;
-  },
-}
+    config.module.rules.push({
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|pdf)(\?.*)?$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name][ext]'
+      }
+    });
 
-module.exports = nextConfig 
+    config.resolve.alias.canvas = false;
+
+    return config;
+  }
+};
+
+module.exports = nextConfig; 

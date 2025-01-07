@@ -1,1 +1,499 @@
-(()=>{var e={};e.id=444,e.ids=[444],e.modules={7849:e=>{"use strict";e.exports=require("next/dist/client/components/action-async-storage.external")},5403:e=>{"use strict";e.exports=require("next/dist/client/components/request-async-storage.external")},4749:e=>{"use strict";e.exports=require("next/dist/client/components/static-generation-async-storage.external")},399:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},5528:e=>{"use strict";e.exports=require("next/dist\\client\\components\\action-async-storage.external.js")},1877:e=>{"use strict";e.exports=require("next/dist\\client\\components\\request-async-storage.external.js")},5319:e=>{"use strict";e.exports=require("next/dist\\client\\components\\static-generation-async-storage.external.js")},9584:(e,t,s)=>{"use strict";s.r(t),s.d(t,{GlobalError:()=>n.a,__next_app__:()=>p,originalPathname:()=>m,pages:()=>d,routeModule:()=>x,tree:()=>c});var a=s(482),i=s(9108),r=s(2563),n=s.n(r),l=s(8300),o={};for(let e in l)0>["default","tree","pages","GlobalError","originalPathname","__next_app__","routeModule"].indexOf(e)&&(o[e]=()=>l[e]);s.d(t,o);let c=["",{children:["portfolio",{children:["__PAGE__",{},{page:[()=>Promise.resolve().then(s.bind(s,2504)),"D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\portfolio\\page.tsx"]}]},{}]},{layout:[()=>Promise.resolve().then(s.bind(s,1342)),"D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],"not-found":[()=>Promise.resolve().then(s.bind(s,8206)),"D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\not-found.tsx"]}],d=["D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\portfolio\\page.tsx"],m="/portfolio/page",p={require:s,loadChunk:()=>Promise.resolve()},x=new a.AppPageRouteModule({definition:{kind:i.x.APP_PAGE,page:"/portfolio/page",pathname:"/portfolio",bundlePath:"",filename:"",appPaths:[]},userland:{loaderTree:c}})},2385:(e,t,s)=>{Promise.resolve().then(s.t.bind(s,2583,23)),Promise.resolve().then(s.t.bind(s,6840,23)),Promise.resolve().then(s.t.bind(s,8771,23)),Promise.resolve().then(s.t.bind(s,3225,23)),Promise.resolve().then(s.t.bind(s,9295,23)),Promise.resolve().then(s.t.bind(s,3982,23))},7373:(e,t,s)=>{Promise.resolve().then(s.t.bind(s,1476,23))},8501:(e,t,s)=>{Promise.resolve().then(s.bind(s,3932))},4:(e,t,s)=>{Promise.resolve().then(s.bind(s,9737))},3932:(e,t,s)=>{"use strict";s.r(t),s.d(t,{default:()=>n});var a=s(2295);s(3729);var i=s(783),r=s.n(i);function n(){return a.jsx("main",{className:"min-h-screen flex items-center justify-center",children:(0,a.jsxs)("div",{className:"text-center p-8",children:[a.jsx("h1",{className:"text-6xl font-bold mb-4 gradient-text",children:"404"}),a.jsx("h2",{className:"text-2xl font-semibold mb-6",children:"Page Not Found"}),a.jsx("p",{className:"text-gray-300 mb-8",children:"The page you are looking for might have been removed or is temporarily unavailable."}),a.jsx(r(),{href:"/",className:"px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors",children:"Return Home"})]})})}},9737:(e,t,s)=>{"use strict";s.r(t),s.d(t,{default:()=>n});var a=s(2295);s(3729);var i=s(5763);let r=[{title:"AI Research & Development",description:"Leading research initiatives in computer vision and GPT-4 integration",imagePath:"/images/ai_network.jpg",tags:["AI","Computer Vision","GPT-4","Research"]},{title:"Supply Chain Analytics",description:"End-to-end supply chain optimization and analytics solutions",imagePath:"/images/logistics.jpg",tags:["Analytics","Supply Chain","Optimization"]},{title:"Business Intelligence",description:"Enterprise-wide BI implementation and analytics frameworks",imagePath:"/images/bi.jpg",tags:["BI","Data Analytics","Visualization"]},{title:"Warehouse Operations",description:"Large-scale warehouse management and optimization systems",imagePath:"/images/warehouse.jpg",tags:["Operations","Management","Optimization"]}];function n(){return a.jsx("main",{className:"min-h-screen py-16",children:(0,a.jsxs)("div",{className:"container mx-auto px-4",children:[a.jsx("h1",{className:"text-4xl font-bold mb-8 gradient-text text-center",children:"Portfolio"}),a.jsx("p",{className:"text-lg text-gray-300 mb-12 text-center max-w-3xl mx-auto",children:"A showcase of projects and achievements in AI, analytics, and operational excellence."}),a.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-8",children:r.map((e,t)=>(0,a.jsxs)("div",{className:"glass-card overflow-hidden",children:[a.jsx(i.Z,{imagePath:e.imagePath,title:e.title,description:e.description}),a.jsx("div",{className:"p-6",children:a.jsx("div",{className:"flex flex-wrap gap-2 mt-4",children:e.tags.map((e,t)=>a.jsx("span",{className:"px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm",children:e},t))})})]},t))})]})})}},5763:(e,t,s)=>{"use strict";s.d(t,{Z:()=>o});var a=s(2295);s(3729);var i=s(1223),r=s.n(i);let n=({title:e,subtitle:t,aspectRatio:s="16/9",className:i=""})=>(0,a.jsxs)("div",{className:`placeholder-gradient rounded-lg relative overflow-hidden ${{square:"aspect-square","16/9":"aspect-[16/9]","4/3":"aspect-[4/3]"}[s]} ${i}`,children:[a.jsx("div",{className:"absolute inset-0 hero-pattern opacity-20"}),(0,a.jsxs)("div",{className:"absolute inset-0 flex flex-col items-center justify-center p-4 text-center",children:[a.jsx("h3",{className:"text-xl font-semibold mb-2 text-white",children:e}),t&&a.jsx("p",{className:"text-sm text-gray-300",children:t})]})]});var l=s(1556);let o=({imagePath:e,title:t,description:s,onClick:i})=>{let o=!e||""===e,c=o?"":(0,l.al)(e);return a.jsx("div",{className:"image-card cursor-pointer",onClick:i,children:o?a.jsx(n,{title:t,subtitle:s,aspectRatio:"16/9",className:"w-full h-full"}):(0,a.jsxs)("div",{className:"relative w-full aspect-[16/9]",children:[a.jsx(r(),{src:c,alt:t,fill:!0,sizes:"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",priority:!0,className:"object-cover rounded-lg",unoptimized:!0}),(0,a.jsxs)("div",{className:"absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end rounded-lg",children:[a.jsx("h3",{className:"text-xl font-semibold mb-2 text-white",children:t}),a.jsx("p",{className:"text-sm text-gray-200",children:s})]})]})})}},1556:(e,t,s)=>{"use strict";s.d(t,{Yo:()=>n,al:()=>i,lq:()=>r});let a=()=>"/ai-research-sc-analytics-v2",i=e=>{let t=a(),s=e.startsWith("/")?e:`/images/${e}`;return`${t}${s}`},r=e=>{let t=a(),s=e.startsWith("/")?e:`/audio/${e}`;return`${t}${s}`},n=e=>{let t=a(),s=e.startsWith("/")?e:`/videos/${e}`;return`${t}${s}`}},1342:(e,t,s)=>{"use strict";s.r(t),s.d(t,{default:()=>c,metadata:()=>o});var a=s(5036),i=s(3640),r=s.n(i);s(5023);var n=s(646),l=s.n(n);let o={title:"AI Research & Supply Chain Analytics Portfolio",description:"Showcasing research papers and supply chain analytics projects"};function c({children:e}){return a.jsx("html",{lang:"en",className:r().className,children:(0,a.jsxs)("body",{children:[a.jsx("nav",{className:"bg-gray-900 border-b border-gray-800",children:a.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:a.jsx("div",{className:"flex items-center justify-between h-16",children:(0,a.jsxs)("div",{className:"flex items-center",children:[a.jsx(l(),{href:"/",className:"text-2xl font-bold gradient-text",children:"Portfolio"}),a.jsx("div",{className:"hidden md:block ml-10",children:(0,a.jsxs)("div",{className:"flex items-center space-x-4",children:[a.jsx(l(),{href:"/research",className:"text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",children:"Research Papers"}),a.jsx(l(),{href:"/supply-chain",className:"text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",children:"Supply Chain & Analytics"})]})})]})})})}),a.jsx("main",{className:"min-h-screen",children:e})]})})}},8206:(e,t,s)=>{"use strict";s.r(t),s.d(t,{$$typeof:()=>r,__esModule:()=>i,default:()=>n});let a=(0,s(6843).createProxy)(String.raw`D:\Projects\webpage\ai-research-sc-analytics-main\jw-ai-sc-de\src\app\not-found.tsx`),{__esModule:i,$$typeof:r}=a,n=a.default},2504:(e,t,s)=>{"use strict";s.r(t),s.d(t,{$$typeof:()=>r,__esModule:()=>i,default:()=>n});let a=(0,s(6843).createProxy)(String.raw`D:\Projects\webpage\ai-research-sc-analytics-main\jw-ai-sc-de\src\app\portfolio\page.tsx`),{__esModule:i,$$typeof:r}=a,n=a.default},5023:()=>{}};var t=require("../../webpack-runtime.js");t.C(e);var s=e=>t(t.s=e),a=t.X(0,[709,223],()=>s(9584));module.exports=a})();
+(() => {
+var exports = {};
+exports.id = 444;
+exports.ids = [444];
+exports.modules = {
+
+/***/ 8038:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react");
+
+/***/ }),
+
+/***/ 8704:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react-dom/server-rendering-stub");
+
+/***/ }),
+
+/***/ 7897:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react-server-dom-webpack/client");
+
+/***/ }),
+
+/***/ 6786:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react/jsx-runtime");
+
+/***/ }),
+
+/***/ 5868:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/app-render/app-render");
+
+/***/ }),
+
+/***/ 1844:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/app-render/get-segment-param");
+
+/***/ }),
+
+/***/ 6624:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/future/helpers/interception-routes");
+
+/***/ }),
+
+/***/ 5281:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/future/route-modules/route-module");
+
+/***/ }),
+
+/***/ 7085:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/app-router-context");
+
+/***/ }),
+
+/***/ 1830:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/get-img-props");
+
+/***/ }),
+
+/***/ 199:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/hash");
+
+/***/ }),
+
+/***/ 6864:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/head");
+
+/***/ }),
+
+/***/ 9569:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/hooks-client-context");
+
+/***/ }),
+
+/***/ 2210:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config");
+
+/***/ }),
+
+/***/ 5359:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config-context");
+
+/***/ }),
+
+/***/ 7160:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router-context");
+
+/***/ }),
+
+/***/ 893:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix");
+
+/***/ }),
+
+/***/ 2336:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-url");
+
+/***/ }),
+
+/***/ 7887:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/handle-smooth-scroll");
+
+/***/ }),
+
+/***/ 8735:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-bot");
+
+/***/ }),
+
+/***/ 120:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-local-url");
+
+/***/ }),
+
+/***/ 8231:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-path");
+
+/***/ }),
+
+/***/ 3750:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash");
+
+/***/ }),
+
+/***/ 982:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/resolve-href");
+
+/***/ }),
+
+/***/ 9618:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/server-inserted-html");
+
+/***/ }),
+
+/***/ 8423:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils");
+
+/***/ }),
+
+/***/ 8658:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils/warn-once");
+
+/***/ }),
+
+/***/ 1097:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GlobalError: () => (/* reexport safe */ next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_1__.GlobalError),
+/* harmony export */   __next_app__: () => (/* binding */ __next_app__),
+/* harmony export */   originalPathname: () => (/* binding */ originalPathname),
+/* harmony export */   pages: () => (/* binding */ pages),
+/* harmony export */   routeModule: () => (/* binding */ routeModule),
+/* harmony export */   tree: () => (/* binding */ tree)
+/* harmony export */ });
+/* harmony import */ var next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7262);
+/* harmony import */ var next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1823);
+/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2502);
+/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_2__) if(["default","tree","pages","GlobalError","originalPathname","__next_app__","routeModule"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_2__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+
+    
+
+    const tree = {
+        children: [
+        '',
+        {
+        children: [
+        'portfolio',
+        {
+        children: ['__PAGE__', {}, {
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 6576)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\portfolio\\page.tsx"],
+          
+        }]
+      },
+        {
+          
+          
+        }
+      ]
+      },
+        {
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 4053)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8275)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\not-found.tsx"],
+          
+        }
+      ]
+      }.children;
+    const pages = ["D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\portfolio\\page.tsx"];
+
+    
+
+    const originalPathname = "/portfolio/page"
+    const __next_app__ = {
+      require: __webpack_require__,
+      // all modules are in the entry chunk, so we never actually need to load chunks in webpack
+      loadChunk: () => Promise.resolve()
+    }
+
+    
+
+    // Create and export the route module that will be consumed.
+    const options = {"definition":{"kind":"APP_PAGE","page":"/portfolio/page","pathname":"/portfolio","bundlePath":"app/portfolio/page","filename":"","appPaths":[]}}
+    const routeModule = new (next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0___default())({
+      ...options,
+      userland: {
+        loaderTree: tree,
+      },
+    })
+  
+
+/***/ }),
+
+/***/ 8623:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
+
+/***/ }),
+
+/***/ 4:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 7792))
+
+/***/ }),
+
+/***/ 7792:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PortfolioPage)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6786);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8038);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_ImageCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1817);
+/* __next_internal_client_entry_do_not_use__ default auto */ 
+
+
+const portfolioItems = [
+    {
+        title: "AI Research & Development",
+        description: "Leading research initiatives in computer vision and GPT-4 integration",
+        imagePath: "/images/ai_network.jpg",
+        tags: [
+            "AI",
+            "Computer Vision",
+            "GPT-4",
+            "Research"
+        ]
+    },
+    {
+        title: "Supply Chain Analytics",
+        description: "End-to-end supply chain optimization and analytics solutions",
+        imagePath: "/images/logistics.jpg",
+        tags: [
+            "Analytics",
+            "Supply Chain",
+            "Optimization"
+        ]
+    },
+    {
+        title: "Business Intelligence",
+        description: "Enterprise-wide BI implementation and analytics frameworks",
+        imagePath: "/images/bi.jpg",
+        tags: [
+            "BI",
+            "Data Analytics",
+            "Visualization"
+        ]
+    },
+    {
+        title: "Warehouse Operations",
+        description: "Large-scale warehouse management and optimization systems",
+        imagePath: "/images/warehouse.jpg",
+        tags: [
+            "Operations",
+            "Management",
+            "Optimization"
+        ]
+    }
+];
+function PortfolioPage() {
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
+        className: "min-h-screen py-16",
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            className: "container mx-auto px-4",
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                    className: "text-4xl font-bold mb-8 gradient-text text-center",
+                    children: "Portfolio"
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                    className: "text-lg text-gray-300 mb-12 text-center max-w-3xl mx-auto",
+                    children: "A showcase of projects and achievements in AI, analytics, and operational excellence."
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: "grid grid-cols-1 md:grid-cols-2 gap-8",
+                    children: portfolioItems.map((item, index)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                            className: "glass-card overflow-hidden",
+                            children: [
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ImageCard__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+                                    imagePath: item.imagePath,
+                                    title: item.title,
+                                    description: item.description
+                                }),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                    className: "p-6",
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "flex flex-wrap gap-2 mt-4",
+                                        children: item.tags.map((tag, tagIndex)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                className: "px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm",
+                                                children: tag
+                                            }, tagIndex))
+                                    })
+                                })
+                            ]
+                        }, index))
+                })
+            ]
+        })
+    });
+}
+
+
+/***/ }),
+
+/***/ 2703:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PA: () => (/* binding */ getPdfPath),
+/* harmony export */   Yo: () => (/* binding */ getVideoPath),
+/* harmony export */   al: () => (/* binding */ getImagePath),
+/* harmony export */   lq: () => (/* binding */ getAudioPath)
+/* harmony export */ });
+/* unused harmony exports getBasePath, getMediaPath */
+const getBasePath = ()=>{
+    return "/ai-research-sc-analytics-v2" || 0;
+};
+const getMediaPath = (path)=>{
+    const basePath = getBasePath();
+    const cleanPath = path.replace(/^\/+/, "");
+    return `${basePath}/media/${cleanPath}`;
+};
+const getImagePath = (path)=>{
+    const basePath = getBasePath();
+    const cleanPath = path.replace(/^\/+/, "");
+    return `${basePath}/images/${cleanPath}`;
+};
+const getPdfPath = (path)=>{
+    const basePath = getBasePath();
+    const cleanPath = path.replace(/^\/+/, "");
+    return `${basePath}/media/pdfs/${cleanPath}`;
+};
+const getAudioPath = (path)=>{
+    const basePath = getBasePath();
+    const cleanPath = path.replace(/^\/+/, "");
+    return `${basePath}/media/audio/${cleanPath}`;
+};
+const getVideoPath = (path)=>{
+    const basePath = getBasePath();
+    const cleanPath = path.replace(/^\/+/, "");
+    return `${basePath}/media/videos/${cleanPath}`;
+};
+
+
+/***/ }),
+
+/***/ 6576:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   $$typeof: () => (/* binding */ $$typeof),
+/* harmony export */   __esModule: () => (/* binding */ __esModule),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1363);
+
+const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`D:\Projects\webpage\ai-research-sc-analytics-main\jw-ai-sc-de\src\app\portfolio\page.tsx`)
+
+// Accessing the __esModule property and exporting $$typeof are required here.
+// The __esModule getter forces the proxy target to create the default export
+// and the $$typeof value is for rendering logic to determine if the module
+// is a client boundary.
+const { __esModule, $$typeof } = proxy;
+const __default__ = proxy.default;
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__default__);
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, [735,451,955,817], () => (__webpack_exec__(1097)));
+module.exports = __webpack_exports__;
+
+})();
