@@ -186,7 +186,7 @@ export default function SupplyChainPage() {
           {videos.map((video, index) => (
             <div key={index} className="space-y-6">
               <VideoPlayer
-                {...video}
+                src={video.videoUrl}
               />
               {video.audioUrl && (
                 <div className="glass-card p-4">

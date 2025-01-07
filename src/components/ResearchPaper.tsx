@@ -45,7 +45,7 @@ const ResearchPaper: React.FC<ResearchPaperProps> = ({
       </div>
 
       <div className="mb-8">
-        <PdfViewer pdfUrl={pdfUrl} />
+        <PdfViewer src={pdfUrl} />
       </div>
 
       <div className="mt-8">

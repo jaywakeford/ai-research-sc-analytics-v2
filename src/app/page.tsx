@@ -29,8 +29,9 @@ export default function Home() {
                   alt="AI and Innovation Homepage Banner"
                   fill
                   priority
-                  className="object-cover object-center"
-                  unoptimized
+                  quality={85}
+                  className="object-cover object-center transition-transform duration-300 hover:scale-105"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -48,8 +49,9 @@ export default function Home() {
                   alt="Profile Picture"
                   fill
                   priority
-                  className="object-cover"
-                  unoptimized
+                  quality={85}
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -97,16 +99,19 @@ export default function Home() {
               imagePath="/images/physics-724973_1280.jpg"
               title="Advanced AI Systems"
               description="Computer vision with GPT-4 integration, distributed NLP frameworks, and innovative machine learning solutions"
+              priority={true}
             />
             <ImageCard
               imagePath="/images/warehouse.jpg"
               title="Enterprise Operations"
               description="Large-scale deployment of Cloud POS systems, operational transformation, and process optimization"
+              priority={true}
             />
             <ImageCard
               imagePath="/images/bi.jpg"
               title="Data Analytics & Mapping"
               description="QGIS-based mapping solutions, enterprise-wide analytics initiatives, and business intelligence"
+              priority={true}
             />
           </div>
         </div>
@@ -121,9 +126,9 @@ export default function Home() {
                   src="/images/logistics.jpg" 
                   alt="Supply Chain Operations"
                   fill
-                  priority
-                  className="object-cover"
-                  unoptimized
+                  quality={85}
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
                 />
               </div>
             </div>

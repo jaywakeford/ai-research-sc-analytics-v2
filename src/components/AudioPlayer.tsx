@@ -8,6 +8,7 @@ import 'react-h5-audio-player/lib/styles.css';
 
 interface AudioPlayerProps {
   src: string;
+  title?: string;
 }
 
 // Since we don't have type declarations for react-h5-audio-player,
