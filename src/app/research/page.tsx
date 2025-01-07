@@ -1,11 +1,22 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 
-// Dynamically import components with ssr: false
-const PdfViewer = dynamic(() => import('@/components/PdfViewer'), { ssr: false });
-const AudioPlayer = dynamic(() => import('@/components/AudioPlayer'), { ssr: false });
+// Dynamically import components with loading states
+const PdfViewer = dynamic(() => import('@/components/PdfViewer'), { 
+  ssr: false,
+  loading: () => (
+    <div className="loading-container">
+      <div className="loading-spinner">Loading PDF viewer...</div>
+    </div>
+  )
+});
+
+const AudioPlayer = dynamic(() => import('@/components/AudioPlayer'), { 
+  ssr: false,
+  loading: () => <div className="loading-spinner">Loading audio player...</div>
+});
 
 const researchPapers = [
   {
@@ -84,15 +95,23 @@ export default function ResearchPage() {
                   ))}
                 </div>
               </div>
-              <div className="pdf-container relative bg-white dark:bg-gray-800 rounded-lg">
-                <PdfViewer pdfUrl={selectedPaper.pdfUrl} />
-              </div>
+              <Suspense fallback={
+                <div className="loading-container">
+                  <div className="loading-spinner">Loading PDF viewer...</div>
+                </div>
+              }>
+                <div className="pdf-container">
+                  <PdfViewer pdfUrl={selectedPaper.pdfUrl} />
+                </div>
+              </Suspense>
             </div>
             <div className="w-full lg:w-1/3">
               <div className="sticky top-8">
                 <h3 className="text-xl font-semibold mb-4">Audio Summary</h3>
                 <div className="glass-card p-4">
-                  <AudioPlayer src={selectedPaper.audioUrl} title="Research Summary" />
+                  <Suspense fallback={<div className="loading-spinner">Loading audio player...</div>}>
+                    <AudioPlayer src={selectedPaper.audioUrl} title="Research Summary" />
+                  </Suspense>
                 </div>
                 <div className="mt-6">
                   <h3 className="text-xl font-semibold mb-4">Key Points</h3>
@@ -108,17 +127,38 @@ export default function ResearchPage() {
           </div>
         </div>
       </div>
-    </main>
-  );
-} 
 
-<style jsx>{`
-  .pdf-container {
-    height: 800px;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-  }
-`}</style> 
+      <style jsx>{`
+        .pdf-container {
+          position: relative;
+          width: 100%;
+          min-height: 600px;
+          height: calc(100vh - 400px);
+          max-height: 1000px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .loading-container {
+          width: 100%;
+          height: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 8px;
+        }
+        .loading-spinner {
+          padding: 2rem;
+          text-align: center;
+          color: #666;
+        }
+        @media (max-width: 1024px) {
+          .pdf-container {
+            height: 600px;
+          }
+        }
+      `}</style>
+    </main>
+  )
+} 

@@ -1,9 +1,9 @@
 const getBasePath = () => {
   if (typeof window === 'undefined') {
-    return process.env.NODE_ENV === 'production' ? '/ai-research-sc-analytics' : '';
+    return process.env.NODE_ENV === 'production' ? '/ai-research-sc-analytics-v2' : '';
   }
-  return window.location.pathname.startsWith('/ai-research-sc-analytics') 
-    ? '/ai-research-sc-analytics' 
+  return window.location.pathname.startsWith('/ai-research-sc-analytics-v2') 
+    ? '/ai-research-sc-analytics-v2' 
     : '';
 };
 
