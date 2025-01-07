@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
+import type { ReactElement } from 'react';
 import { getVideoPath } from '@/utils/paths';
 import videojs from 'video.js';
+import type Player from 'video.js/dist/types/player';
 import 'video.js/dist/video-js.css';
 
 interface VideoPlayerProps {
@@ -10,9 +12,9 @@ interface VideoPlayerProps {
   poster?: string;
 }
 
-export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
+export default function VideoPlayer({ src, poster }: VideoPlayerProps): ReactElement {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<Player | null>(null);
 
   useEffect(() => {
     if (!videoRef.current) return;

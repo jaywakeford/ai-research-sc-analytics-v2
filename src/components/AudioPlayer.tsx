@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import type { ReactElement } from 'react';
 import H5AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import { getAudioPath } from '@/utils/paths';
 import 'react-h5-audio-player/lib/styles.css';
@@ -9,7 +10,18 @@ interface AudioPlayerProps {
   src: string;
 }
 
-export default function AudioPlayer({ src }: AudioPlayerProps) {
+// Since we don't have type declarations for react-h5-audio-player,
+// we'll use a more generic type for the component
+type H5AudioPlayerProps = {
+  src: string;
+  autoPlay?: boolean;
+  showJumpControls?: boolean;
+  layout?: 'horizontal' | 'vertical' | 'stacked';
+  customProgressBarSection?: any[];
+  customControlsSection?: any[];
+};
+
+export default function AudioPlayer({ src }: AudioPlayerProps): ReactElement {
   return (
     <div className="w-full">
       <H5AudioPlayer
