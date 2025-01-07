@@ -1,6 +1,6 @@
 {
   "name": "ai-research-sc-analytics-v2",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "homepage": "https://jaywakeford.github.io/ai-research-sc-analytics-v2",
   "scripts": {
@@ -16,27 +16,27 @@
     "canvas": "^3.0.1",
     "critters": "^0.0.20",
     "hls.js": "^1.5.18",
-    "next": "14.0.4",
+    "next": "13.4.12",
     "pdfjs-dist": "3.4.120",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-h5-audio-player": "^3.9.1",
-    "react-pdf": "7.3.3",
+    "react-pdf": "^7.1.2",
     "sharp": "^0.33.2",
     "video.js": "^8.21.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
     "gh-pages": "^6.1.1",
-    "postcss": "^8",
+    "postcss": "8.4.27",
     "rimraf": "^5.0.10",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=18.17.0"
