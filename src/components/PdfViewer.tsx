@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { getPdfPath } from '@/utils/paths';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `/ai-research-sc-analytics-v2/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
 
 interface PdfViewerProps {
   src: string;
@@ -38,7 +39,7 @@ export default function PdfViewer({ src }: PdfViewerProps) {
     <div className="flex flex-col items-center">
       <div className="relative w-full max-w-3xl overflow-auto max-h-[800px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-300">
         <Document
-          file={`/ai-research-sc-analytics-v2${src}`}
+          file={getPdfPath(src)}
           onLoadSuccess={onDocumentLoadSuccess}
           className="flex justify-center"
         >

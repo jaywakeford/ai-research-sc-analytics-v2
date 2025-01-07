@@ -6,6 +6,7 @@ import ImageCard from '@/components/ImageCard';
 import MetricsSection from '@/components/MetricsSection';
 import AudioPlayer from '@/components/AudioPlayer';
 import Image from 'next/image';
+import { getImagePath } from '@/utils/paths';
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
             <div className="w-full lg:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/homepage.jpg"
+                  src={getImagePath('/images/homepage.jpg')}
                   alt="AI and Innovation Homepage Banner"
                   fill
                   priority
@@ -45,7 +46,7 @@ export default function Home() {
             <div className="w-full md:w-1/3">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                 <Image
-                  src="/images/profile.jpg"
+                  src={getImagePath('/images/profile.jpg')}
                   alt="Profile Picture"
                   fill
                   priority
@@ -96,7 +97,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 gradient-text">Core Expertise</h2>
           <div className="image-grid">
             <ImageCard
-              imagePath="/images/physics-724973_1280.jpg"
+              imagePath="/images/physics-7249773_1280.jpg"
               title="Advanced AI Systems"
               description="Computer vision with GPT-4 integration, distributed NLP frameworks, and innovative machine learning solutions"
               priority={true}
@@ -123,7 +124,7 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image 
-                  src="/images/logistics.jpg" 
+                  src={getImagePath('/images/logistics.jpg')}
                   alt="Supply Chain Operations"
                   fill
                   quality={85}
