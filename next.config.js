@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+// Configuration for GitHub Pages deployment
 const nextConfig = {
   output: 'export',
   basePath: '/ai-research-sc-analytics-v2',
