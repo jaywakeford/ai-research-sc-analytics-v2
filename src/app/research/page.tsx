@@ -10,12 +10,12 @@ const ResearchPage: React.FC = () => {
       
       <section className="paper-section">
         <h2>AI Agent Systems</h2>
-        <PdfViewer pdfUrl="/ai-research-sc-analytics-v2/pdfs/ai-agent-systems.pdf" />
+        <PdfViewer src="/pdfs/ai-agent-systems.pdf" />
       </section>
 
       <section className="paper-section">
         <h2>Open Interpreter</h2>
-        <PdfViewer pdfUrl="/ai-research-sc-analytics-v2/pdfs/open-interpreter.pdf" />
+        <PdfViewer src="/pdfs/open-interpreter.pdf" />
       </section>
 
       <style jsx>{`

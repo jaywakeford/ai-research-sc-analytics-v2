@@ -21,10 +21,10 @@ export default function VideoPlayer({ src, poster }: VideoPlayerProps) {
       controls: true,
       fluid: true,
       sources: [{
-        src: `/ai-research-sc-analytics-v2${src}`,
+        src: getVideoPath(src),
         type: 'video/mp4'
       }],
-      poster: poster ? `/ai-research-sc-analytics-v2${poster}` : undefined
+      poster: poster ? getVideoPath(poster) : undefined
     });
 
     return () => {
