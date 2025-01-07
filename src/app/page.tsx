@@ -25,8 +25,8 @@ export default function Home() {
             <div className="w-full lg:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/logistics-network.jpg"
-                  alt="Logistics Network Visualization"
+                  src="/images/ai_network.jpg"
+                  alt="AI Network Visualization"
                   fill
                   priority
                   className="object-cover object-center"
@@ -44,7 +44,7 @@ export default function Home() {
             <div className="w-full md:w-1/3">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                 <Image
-                  src="/images/selfie2.jpg"
+                  src="/images/ai_network.jpg"
                   alt="Profile Picture"
                   fill
                   priority
@@ -94,12 +94,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 gradient-text">Core Expertise</h2>
           <div className="image-grid">
             <ImageCard
-              imagePath="/images/physics-7249773_1280.jpg"
+              imagePath="/images/ai_network.jpg"
               title="Advanced AI Systems"
               description="Computer vision with GPT-4 integration, distributed NLP frameworks, and innovative machine learning solutions"
             />
             <ImageCard
-              imagePath="/images/warehouse.jpg"
+              imagePath="/images/ai_network.jpg"
               title="Enterprise Operations"
               description="Large-scale deployment of Cloud POS systems, operational transformation, and process optimization"
             />
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image 
-                  src="/images/logistics.jpg" 
+                  src="/images/ai_network.jpg" 
                   alt="Supply Chain Operations"
                   fill
                   priority
