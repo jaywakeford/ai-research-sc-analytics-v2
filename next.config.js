@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
-// Configuration for GitHub Pages deployment
-// Cache-busting timestamp: 2024-01-07
+// Configuration for GitHub Pages deployment v2
 const nextConfig = {
   output: 'export',
   basePath: '/ai-research-sc-analytics-v2',
   images: {
     unoptimized: true,
   },
+  // Disable canvas in webpack build
   webpack: (config) => {
     config.externals = [...config.externals, 'canvas'];
     return config;
