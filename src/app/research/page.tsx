@@ -117,6 +117,6 @@ export default function ResearchPage() {
     height: 800px;
     margin-bottom: 2rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 `}</style> 

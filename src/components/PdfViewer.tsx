@@ -167,11 +167,12 @@ const PdfViewer: React.FC<PdfViewerProps> = memo(({ pdfUrl }) => {
           padding: 1rem;
           background: rgba(0, 0, 0, 0.8);
           border-radius: 8px;
-          position: fixed;
+          position: absolute;
           bottom: 20px;
           left: 50%;
           transform: translateX(-50%);
-          z-index: 50;
+          z-index: 10;
+          width: auto;
         }
         button {
           padding: 0.5rem 1rem;
