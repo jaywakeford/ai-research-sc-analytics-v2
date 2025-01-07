@@ -22,7 +22,7 @@ type H5AudioPlayerProps = {
   customControlsSection?: any[];
 };
 
-export default function AudioPlayer({ src }: AudioPlayerProps): ReactElement {
+export default function AudioPlayer({ src, title }: AudioPlayerProps): ReactElement {
   return (
     <div className="w-full">
       <H5AudioPlayer
