@@ -26,7 +26,7 @@ export default function Home() {
             <div className="w-full lg:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src={getImagePath('/images/homepage.jpg')}
+                  src={getImagePath('homepage.jpg')}
                   alt="AI and Innovation Homepage Banner"
                   fill
                   priority
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="w-full md:w-1/3">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                 <Image
-                  src={getImagePath('/images/profile.jpg')}
+                  src={getImagePath('profile.jpg')}
                   alt="Profile Picture"
                   fill
                   priority
@@ -84,7 +84,7 @@ export default function Home() {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <AudioPlayer
-            src="/media/audio/jw-overview.mp3"
+            src="jw-overview.mp3"
             title="Overview Audio"
           />
         </div>
@@ -97,19 +97,19 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 gradient-text">Core Expertise</h2>
           <div className="image-grid">
             <ImageCard
-              imagePath="/images/physics-7249773_1280.jpg"
+              imagePath="physics-7249773_1280.jpg"
               title="Advanced AI Systems"
               description="Computer vision with GPT-4 integration, distributed NLP frameworks, and innovative machine learning solutions"
               priority={true}
             />
             <ImageCard
-              imagePath="/images/warehouse.jpg"
+              imagePath="warehouse.jpg"
               title="Enterprise Operations"
               description="Large-scale deployment of Cloud POS systems, operational transformation, and process optimization"
               priority={true}
             />
             <ImageCard
-              imagePath="/images/bi.jpg"
+              imagePath="bi.jpg"
               title="Data Analytics & Mapping"
               description="QGIS-based mapping solutions, enterprise-wide analytics initiatives, and business intelligence"
               priority={true}
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image 
-                  src={getImagePath('/images/logistics.jpg')}
+                  src={getImagePath('logistics.jpg')}
                   alt="Supply Chain Operations"
                   fill
                   quality={85}

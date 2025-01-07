@@ -4,7 +4,7 @@ export const getBasePath = () => {
 
 export const getMediaPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = path.startsWith('/') ? path : `/media/${path}`;
   return `${basePath}${cleanPath}`;
 };
 
@@ -16,18 +16,18 @@ export const getImagePath = (path: string): string => {
 
 export const getPdfPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path : `/pdfs/${path}`;
+  const cleanPath = path.startsWith('/') ? path : `/media/pdfs/${path}`;
   return `${basePath}${cleanPath}`;
 };
 
 export const getAudioPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `${basePath}/${cleanPath}`;
+  const cleanPath = path.startsWith('/') ? path : `/media/audio/${path}`;
+  return `${basePath}${cleanPath}`;
 };
 
 export const getVideoPath = (path: string): string => {
   const basePath = getBasePath();
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `${basePath}/${cleanPath}`;
+  const cleanPath = path.startsWith('/') ? path : `/media/videos/${path}`;
+  return `${basePath}${cleanPath}`;
 }; 

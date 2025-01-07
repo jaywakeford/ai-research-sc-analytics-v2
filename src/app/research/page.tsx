@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PdfViewer from '@/components/PdfViewer';
+import AudioPlayer from '@/components/AudioPlayer';
 
 type TabId = 'powerbi' | 'agents' | 'interpreter' | 'ml';
 
@@ -21,23 +22,23 @@ const ResearchPage: React.FC = () => {
   const papers: Papers = {
     powerbi: {
       title: 'Power BI Analytics Development',
-      pdfPath: '/media/pdfs/powerbi-analytics-development-a.pdf',
-      audioPath: '/media/audio/power-bi-analytics-for-at-the-money-trading.mp3'
+      pdfPath: 'powerbi-analytics-development-a.pdf',
+      audioPath: 'power-bi-analytics-for-at-the-money-trading.mp3'
     },
     agents: {
       title: 'AI Agent Systems Research',
-      pdfPath: '/media/pdfs/agents-research-b.pdf',
-      audioPath: '/media/audio/ai-agent-systems-for-finance-and-macroeconomics.mp3'
+      pdfPath: 'agents-research-b.pdf',
+      audioPath: 'ai-agent-systems-for-finance-and-macroeconomics.mp3'
     },
     interpreter: {
       title: 'Open Interpreter Integration',
-      pdfPath: '/media/pdfs/open-interpreter-c.pdf',
-      audioPath: '/media/audio/automating-workflows-with-open-interpreter.mp3'
+      pdfPath: 'open-interpreter-c.pdf',
+      audioPath: 'automating-workflows-with-open-interpreter.mp3'
     },
     ml: {
       title: 'Independent Machine Learning Research',
-      pdfPath: '/media/pdfs/independent-ml-learning-model-d.pdf',
-      audioPath: '/media/audio/independent-machine-learning-research-in-financial-trading.mp3'
+      pdfPath: 'independent-ml-learning-model-d.pdf',
+      audioPath: 'independent-machine-learning-research-in-financial-trading.mp3'
     }
   };
 
@@ -93,7 +94,16 @@ const ResearchPage: React.FC = () => {
 
         <div className="glass-card p-8 rounded-xl">
           <h2 className="text-2xl font-bold mb-6 text-white">{papers[activeTab].title}</h2>
-          <PdfViewer src={papers[activeTab].pdfPath} />
+          <div className="mb-8">
+            <PdfViewer src={papers[activeTab].pdfPath} />
+          </div>
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold mb-4 text-white">Audio Summary</h3>
+            <AudioPlayer
+              src={papers[activeTab].audioPath}
+              title={`${papers[activeTab].title} - Audio Summary`}
+            />
+          </div>
         </div>
       </div>
     </div>
