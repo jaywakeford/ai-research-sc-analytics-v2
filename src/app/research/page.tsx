@@ -18,6 +18,16 @@ type Papers = {
 
 const ResearchPage: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<TabId>('powerbi');
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    setIsLoading(true);
+    // Simulate loading time for tab change
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [activeTab]);
 
   const papers: Papers = {
     powerbi: {
@@ -95,7 +105,13 @@ const ResearchPage: React.FC = () => {
         <div className="glass-card p-8 rounded-xl">
           <h2 className="text-2xl font-bold mb-6 text-white">{papers[activeTab].title}</h2>
           <div className="mb-8">
-            <PdfViewer src={papers[activeTab].pdfPath} />
+            {isLoading ? (
+              <div className="flex justify-center p-8">
+                <div className="loading-spinner" />
+              </div>
+            ) : (
+              <PdfViewer src={papers[activeTab].pdfPath} />
+            )}
           </div>
           <div className="mt-8">
             <h3 className="text-xl font-semibold mb-4 text-white">Audio Summary</h3>
@@ -106,6 +122,23 @@ const ResearchPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .loading-spinner {
+          width: 40px;
+          height: 40px;
+          border: 4px solid rgba(255, 255, 255, 0.1);
+          border-left-color: #3b82f6;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </div>
   );
 };

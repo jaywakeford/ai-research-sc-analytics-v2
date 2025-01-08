@@ -7,7 +7,8 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 // Set worker path
-pdfjs.GlobalWorkerOptions.workerSrc = `${getBasePath()}/pdf.worker.min.js`;
+const workerSrc = `${getBasePath()}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 interface PdfViewerProps {
   src: string;
@@ -22,10 +23,11 @@ export default function PdfViewer({ src }: PdfViewerProps) {
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
     setIsLoading(false);
+    setError(null);
   }
 
   function onDocumentLoadError(error: Error) {
-    console.error('Error loading PDF:', error);
+    console.error('Error loading PDF:', error, 'Source:', getPdfPath(src));
     setError(error);
     setIsLoading(false);
   }
@@ -49,6 +51,7 @@ export default function PdfViewer({ src }: PdfViewerProps) {
     return (
       <div className="bg-red-900/20 p-4 rounded-lg text-red-200">
         <p>Error loading PDF: {error.message}</p>
+        <p className="text-sm mt-2">Source: {getPdfPath(src)}</p>
       </div>
     );
   }
@@ -71,6 +74,11 @@ export default function PdfViewer({ src }: PdfViewerProps) {
             </div>
           }
           className="flex justify-center"
+          error={
+            <div className="bg-red-900/20 p-4 rounded-lg text-red-200">
+              <p>Failed to load PDF. Please try again later.</p>
+            </div>
+          }
         >
           <Page
             pageNumber={pageNumber}
@@ -81,6 +89,11 @@ export default function PdfViewer({ src }: PdfViewerProps) {
             loading={
               <div className="flex justify-center p-4">
                 <div className="loading-spinner" />
+              </div>
+            }
+            error={
+              <div className="bg-red-900/20 p-4 rounded-lg text-red-200">
+                <p>Failed to load page {pageNumber}. Please try again later.</p>
               </div>
             }
           />
