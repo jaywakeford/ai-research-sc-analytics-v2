@@ -15,8 +15,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <html lang="en" className={inter.className}>
+      <head>
+        <base href={`${basePath}/`} />
+      </head>
       <body>
         <nav className="bg-gray-900 border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

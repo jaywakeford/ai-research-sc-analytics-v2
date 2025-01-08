@@ -2,7 +2,8 @@ export const getBasePath = () => {
   if (typeof window === 'undefined') {
     return process.env.NEXT_PUBLIC_BASE_PATH || '';
   }
-  return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const baseElement = document.querySelector('base');
+  return baseElement ? baseElement.getAttribute('href')?.replace(/\/$/, '') || '' : process.env.NEXT_PUBLIC_BASE_PATH || '';
 };
 
 export const getMediaPath = (path: string): string => {
