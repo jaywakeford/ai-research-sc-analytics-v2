@@ -2,8 +2,7 @@ export const getBasePath = () => {
   if (typeof window === 'undefined') {
     return process.env.NEXT_PUBLIC_BASE_PATH || '';
   }
-  const pathname = window.location.pathname;
-  return pathname.startsWith('/ai-research-sc-analytics-v2') ? '/ai-research-sc-analytics-v2' : '';
+  return process.env.NEXT_PUBLIC_BASE_PATH || '';
 };
 
 export const getMediaPath = (path: string): string => {

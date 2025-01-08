@@ -7,8 +7,7 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 // Set worker path
-const workerSrc = `${getBasePath()}/pdf.worker.min.js`;
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+pdfjs.GlobalWorkerOptions.workerSrc = `${getBasePath()}/pdf.worker.min.js`;
 
 interface PdfViewerProps {
   src: string;
