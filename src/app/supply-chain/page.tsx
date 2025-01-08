@@ -7,7 +7,7 @@ import AudioPlayer from '@/components/AudioPlayer';
 const videos = [
   {
     title: 'Colleague to Colleague Deep Analytics',
-    videoUrl: 'colleague-to-colleague-deep-analytics.mp4',
+    videoUrl: 'reporting-insights-rapid-demo.mp4',
     description: 'Advanced analytics platform facilitating peer-to-peer collaboration and deep insights sharing.',
     technologies: ['Analytics', 'Collaboration', 'Data Visualization'],
     metrics: [
@@ -52,7 +52,7 @@ const videos = [
   },
   {
     title: 'Opportunity Gaps Automation',
-    videoUrl: 'opportunity-gaps-automation.mp4',
+    videoUrl: 'bottomup-task-management-system.mp4',
     description: 'AI-driven system for identifying and analyzing supply chain optimization opportunities.',
     technologies: ['AI/ML', 'Python', 'Tableau', 'Big Data'],
     metrics: [
