@@ -101,54 +101,62 @@ const metadata = {
     description: "Showcasing research papers and supply chain analytics projects"
 };
 function RootLayout({ children }) {
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("html", {
+    const basePath =  false || "";
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("html", {
         lang: "en",
         className: (next_font_google_target_css_path_src_app_layout_tsx_import_Inter_arguments_subsets_latin_variableName_inter___WEBPACK_IMPORTED_MODULE_3___default().className),
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("body", {
-            children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("nav", {
-                    className: "bg-gray-900 border-b border-gray-800",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("head", {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("base", {
+                    href: `${basePath}/`
+                })
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("body", {
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("nav", {
+                        className: "bg-gray-900 border-b border-gray-800",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "flex items-center justify-between h-16",
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: "flex items-center",
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                                        href: "/",
-                                        className: "text-2xl font-bold gradient-text",
-                                        children: "Portfolio"
-                                    }),
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: "hidden md:block ml-10",
-                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                            className: "flex items-center space-x-4",
-                                            children: [
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                                                    href: "/research",
-                                                    className: "text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                                                    children: "Research Papers"
-                                                }),
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                                                    href: "/supply-chain",
-                                                    className: "text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                                                    children: "Supply Chain & Analytics"
-                                                })
-                                            ]
+                            className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: "flex items-center justify-between h-16",
+                                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                    className: "flex items-center",
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                            href: "/",
+                                            className: "text-2xl font-bold gradient-text",
+                                            children: "Portfolio"
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                            className: "hidden md:block ml-10",
+                                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                className: "flex items-center space-x-4",
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                                        href: "/research",
+                                                        className: "text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                                                        children: "Research Papers"
+                                                    }),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                                        href: "/supply-chain",
+                                                        className: "text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                                                        children: "Supply Chain & Analytics"
+                                                    })
+                                                ]
+                                            })
                                         })
-                                    })
-                                ]
+                                    ]
+                                })
                             })
                         })
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
+                        className: "min-h-screen",
+                        children: children
                     })
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
-                    className: "min-h-screen",
-                    children: children
-                })
-            ]
-        })
+                ]
+            })
+        ]
     });
 }
 

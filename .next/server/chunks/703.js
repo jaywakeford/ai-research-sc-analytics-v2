@@ -18,8 +18,8 @@ const getBasePath = ()=>{
     if (true) {
         return  false || "";
     }
-    const pathname = window.location.pathname;
-    return pathname.startsWith("/ai-research-sc-analytics-v2") ? "/ai-research-sc-analytics-v2" : "";
+    const baseElement = document.querySelector("base");
+    return baseElement ? baseElement.getAttribute("href")?.replace(/\/$/, "") || "" :  false || "";
 };
 const getMediaPath = (path)=>{
     const basePath = getBasePath();
