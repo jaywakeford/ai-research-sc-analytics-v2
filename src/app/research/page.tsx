@@ -4,7 +4,7 @@ import React from 'react';
 import PdfViewer from '@/components/PdfViewer';
 import AudioPlayer from '@/components/AudioPlayer';
 
-type TabId = 'powerbi' | 'agents' | 'interpreter' | 'ml';
+type TabId = 'agents' | 'interpreter' | 'ml';
 
 interface ResearchPaper {
   title: string;
@@ -17,7 +17,7 @@ type Papers = {
 };
 
 const ResearchPage: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState<TabId>('powerbi');
+  const [activeTab, setActiveTab] = React.useState<TabId>('agents');
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
@@ -30,11 +30,6 @@ const ResearchPage: React.FC = () => {
   }, [activeTab]);
 
   const papers: Papers = {
-    powerbi: {
-      title: 'Power BI Analytics Development',
-      pdfPath: 'powerbi-analytics-development-a.pdf',
-      audioPath: 'power-bi-analytics-for-at-the-money-trading.mp3'
-    },
     agents: {
       title: 'AI Agent Systems Research',
       pdfPath: 'agents-research-b.pdf',
@@ -64,15 +59,6 @@ const ResearchPage: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <button
-            onClick={() => setActiveTab('powerbi')}
-            className={`px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === 'powerbi' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
-          >
-            Power BI Analytics Development
-          </button>
           <button
             onClick={() => setActiveTab('agents')}
             className={`px-6 py-3 rounded-lg text-sm font-medium transition-colors

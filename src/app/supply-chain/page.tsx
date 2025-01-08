@@ -7,7 +7,7 @@ import AudioPlayer from '@/components/AudioPlayer';
 const videos = [
   {
     title: 'Colleague to Colleague Deep Analytics',
-    videoUrl: 'reporting-insights-rapid-demo.mp4',
+    videoUrl: 'balanced-scorecard.mp4',
     description: 'Advanced analytics platform facilitating peer-to-peer collaboration and deep insights sharing.',
     technologies: ['Analytics', 'Collaboration', 'Data Visualization'],
     metrics: [
@@ -63,7 +63,7 @@ const videos = [
   },
   {
     title: 'Real-Time Analytics Dashboard',
-    videoUrl: 'reporting-insights-rapid-demo.mp4',
+    videoUrl: 'balanced-scorecard.mp4',
     description: 'Dynamic reporting system with real-time insights and predictive analytics.',
     technologies: ['Power BI', 'SQL', 'Real-time Analytics'],
     metrics: [
