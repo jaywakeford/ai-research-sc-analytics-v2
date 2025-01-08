@@ -18,7 +18,8 @@ const getBasePath = ()=>{
     if (true) {
         return  false || "";
     }
-    return window.location.pathname.startsWith("/ai-research-sc-analytics-v2") ? "/ai-research-sc-analytics-v2" : "";
+    const pathname = window.location.pathname;
+    return pathname.startsWith("/ai-research-sc-analytics-v2") ? "/ai-research-sc-analytics-v2" : "";
 };
 const getMediaPath = (path)=>{
     const basePath = getBasePath();

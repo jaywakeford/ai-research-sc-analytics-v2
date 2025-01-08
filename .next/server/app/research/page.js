@@ -323,12 +323,12 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "next/dist/compiled/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(6786);
-// EXTERNAL MODULE: external "next/dist/compiled/react"
-var react_ = __webpack_require__(8038);
-var react_default = /*#__PURE__*/__webpack_require__.n(react_);
 // EXTERNAL MODULE: ./node_modules/styled-jsx/style.js
 var style = __webpack_require__(6369);
 var style_default = /*#__PURE__*/__webpack_require__.n(style);
+// EXTERNAL MODULE: external "next/dist/compiled/react"
+var react_ = __webpack_require__(8038);
+var react_default = /*#__PURE__*/__webpack_require__.n(react_);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/pdfjs.js
 var pdfjs = __webpack_require__(7540);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Document.js + 1 modules
@@ -350,7 +350,8 @@ var TextLayer = __webpack_require__(8801);
 
 
 // Set worker path
-pdfjs["default"].GlobalWorkerOptions.workerSrc = `${(0,paths/* getBasePath */.bv)()}/pdf.worker.min.js`;
+const workerSrc = `${(0,paths/* getBasePath */.bv)()}/pdf.worker.min.js`;
+pdfjs["default"].GlobalWorkerOptions.workerSrc = workerSrc;
 function PdfViewer({ src }) {
     const [numPages, setNumPages] = (0,react_.useState)(0);
     const [pageNumber, setPageNumber] = (0,react_.useState)(1);
@@ -359,9 +360,10 @@ function PdfViewer({ src }) {
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
         setIsLoading(false);
+        setError(null);
     }
     function onDocumentLoadError(error) {
-        console.error("Error loading PDF:", error);
+        console.error("Error loading PDF:", error, "Source:", (0,paths/* getPdfPath */.PA)(src));
         setError(error);
         setIsLoading(false);
     }
@@ -378,14 +380,23 @@ function PdfViewer({ src }) {
         changePage(1);
     }
     if (error) {
-        return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
             className: "bg-red-900/20 p-4 rounded-lg text-red-200",
-            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
-                children: [
-                    "Error loading PDF: ",
-                    error.message
-                ]
-            })
+            children: [
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                    children: [
+                        "Error loading PDF: ",
+                        error.message
+                    ]
+                }),
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                    className: "text-sm mt-2",
+                    children: [
+                        "Source: ",
+                        (0,paths/* getPdfPath */.PA)(src)
+                    ]
+                })
+            ]
         });
     }
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -411,6 +422,13 @@ function PdfViewer({ src }) {
                             })
                         }),
                         className: "flex justify-center",
+                        error: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                            className: "jsx-18cba3082f874def" + " " + "bg-red-900/20 p-4 rounded-lg text-red-200",
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                className: "jsx-18cba3082f874def",
+                                children: "Failed to load PDF. Please try again later."
+                            })
+                        }),
                         children: /*#__PURE__*/ jsx_runtime_.jsx(Page/* default */.Z, {
                             pageNumber: pageNumber,
                             className: "border border-gray-200 dark:border-gray-700 shadow-lg",
@@ -421,6 +439,17 @@ function PdfViewer({ src }) {
                                 className: "jsx-18cba3082f874def" + " " + "flex justify-center p-4",
                                 children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                     className: "jsx-18cba3082f874def" + " " + "loading-spinner"
+                                })
+                            }),
+                            error: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "jsx-18cba3082f874def" + " " + "bg-red-900/20 p-4 rounded-lg text-red-200",
+                                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                                    className: "jsx-18cba3082f874def",
+                                    children: [
+                                        "Failed to load page ",
+                                        pageNumber,
+                                        ". Please try again later."
+                                    ]
                                 })
                             })
                         })
@@ -470,8 +499,20 @@ var AudioPlayer = __webpack_require__(2115);
 
 
 
+
 const ResearchPage = ()=>{
     const [activeTab, setActiveTab] = react_default().useState("powerbi");
+    const [isLoading, setIsLoading] = react_default().useState(true);
+    react_default().useEffect(()=>{
+        setIsLoading(true);
+        // Simulate loading time for tab change
+        const timer = setTimeout(()=>{
+            setIsLoading(false);
+        }, 500);
+        return ()=>clearTimeout(timer);
+    }, [
+        activeTab
+    ]);
     const papers = {
         powerbi: {
             title: "Power BI Analytics Development",
@@ -494,86 +535,141 @@ const ResearchPage = ()=>{
             audioPath: "independent-machine-learning-research-in-financial-trading.mp3"
         }
     };
-    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
-        className: "min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-indigo-900",
-        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-            className: "max-w-7xl mx-auto",
-            children: [
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    className: "text-center mb-16",
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx("h1", {
-                            className: "text-5xl font-bold mb-4 gradient-text",
-                            children: "Research Papers"
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("p", {
-                            className: "text-xl text-gray-300 max-w-3xl mx-auto",
-                            children: "A collection of research papers exploring AI innovation, machine learning applications, and advanced analytics in financial systems."
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    className: "flex flex-wrap justify-center gap-4 mb-12",
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            onClick: ()=>setActiveTab("powerbi"),
-                            className: `px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === "powerbi" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
-                            children: "Power BI Analytics Development"
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            onClick: ()=>setActiveTab("agents"),
-                            className: `px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === "agents" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
-                            children: "AI Agent Systems Research"
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            onClick: ()=>setActiveTab("interpreter"),
-                            className: `px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === "interpreter" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
-                            children: "Open Interpreter Integration"
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            onClick: ()=>setActiveTab("ml"),
-                            className: `px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === "ml" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
-                            children: "Independent Machine Learning Research"
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    className: "glass-card p-8 rounded-xl",
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                            className: "text-2xl font-bold mb-6 text-white",
-                            children: papers[activeTab].title
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            className: "mb-8",
-                            children: /*#__PURE__*/ jsx_runtime_.jsx(PdfViewer, {
-                                src: papers[activeTab].pdfPath
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "jsx-18cba3082f874def" + " " + "min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-indigo-900",
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "jsx-18cba3082f874def" + " " + "max-w-7xl mx-auto",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "jsx-18cba3082f874def" + " " + "text-center mb-16",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                                className: "jsx-18cba3082f874def" + " " + "text-5xl font-bold mb-4 gradient-text",
+                                children: "Research Papers"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                className: "jsx-18cba3082f874def" + " " + "text-xl text-gray-300 max-w-3xl mx-auto",
+                                children: "A collection of research papers exploring AI innovation, machine learning applications, and advanced analytics in financial systems."
                             })
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                            className: "mt-8",
-                            children: [
-                                /*#__PURE__*/ jsx_runtime_.jsx("h3", {
-                                    className: "text-xl font-semibold mb-4 text-white",
-                                    children: "Audio Summary"
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(AudioPlayer/* default */.Z, {
-                                    src: papers[activeTab].audioPath,
-                                    title: `${papers[activeTab].title} - Audio Summary`
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "jsx-18cba3082f874def" + " " + "flex flex-wrap justify-center gap-4 mb-12",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>setActiveTab("powerbi"),
+                                className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
+              ${activeTab === "powerbi" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
+                                children: "Power BI Analytics Development"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>setActiveTab("agents"),
+                                className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
+              ${activeTab === "agents" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
+                                children: "AI Agent Systems Research"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>setActiveTab("interpreter"),
+                                className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
+              ${activeTab === "interpreter" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
+                                children: "Open Interpreter Integration"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                onClick: ()=>setActiveTab("ml"),
+                                className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
+              ${activeTab === "ml" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
+                                children: "Independent Machine Learning Research"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "jsx-18cba3082f874def" + " " + "glass-card p-8 rounded-xl",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                className: "jsx-18cba3082f874def" + " " + "text-2xl font-bold mb-6 text-white",
+                                children: papers[activeTab].title
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "jsx-18cba3082f874def" + " " + "mb-8",
+                                children: isLoading ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: "jsx-18cba3082f874def" + " " + "flex justify-center p-8",
+                                    children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "jsx-18cba3082f874def" + " " + "loading-spinner"
+                                    })
+                                }) : /*#__PURE__*/ jsx_runtime_.jsx(PdfViewer, {
+                                    src: papers[activeTab].pdfPath
                                 })
-                            ]
-                        })
-                    ]
-                })
-            ]
-        })
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "jsx-18cba3082f874def" + " " + "mt-8",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("h3", {
+                                        className: "jsx-18cba3082f874def" + " " + "text-xl font-semibold mb-4 text-white",
+                                        children: "Audio Summary"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx(AudioPlayer/* default */.Z, {
+                                        src: papers[activeTab].audioPath,
+                                        title: `${papers[activeTab].title} - Audio Summary`
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            jsx_runtime_.jsx((style_default()), {
+                id: "18cba3082f874def",
+                children: ".loading-spinner.jsx-18cba3082f874def{width:40px;height:40px;border:4px solid rgba(255,255,255,.1);border-left-color:#3b82f6;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;-webkit-animation:spin 1s linear infinite;-moz-animation:spin 1s linear infinite;-o-animation:spin 1s linear infinite;animation:spin 1s linear infinite}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes spin{to{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes spin{to{-o-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}}"
+            })
+        ]
     });
 };
 /* harmony default export */ const page = (ResearchPage);
+
+
+/***/ }),
+
+/***/ 2115:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: () => (/* binding */ AudioPlayer)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6786);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8038);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6679);
+/* harmony import */ var _utils_paths__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2703);
+/* harmony import */ var react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2438);
+/* harmony import */ var react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* __next_internal_client_entry_do_not_use__ default auto */ 
+
+
+
+
+function AudioPlayer({ src, title }) {
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+        className: "w-full",
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .ZP, {
+            src: (0,_utils_paths__WEBPACK_IMPORTED_MODULE_4__/* .getAudioPath */ .lq)(src),
+            autoPlay: false,
+            showJumpControls: true,
+            layout: "horizontal",
+            customProgressBarSection: [
+                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.CURRENT_TIME,
+                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.PROGRESS_BAR,
+                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.DURATION
+            ],
+            customControlsSection: [
+                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.MAIN_CONTROLS,
+                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.VOLUME_CONTROLS
+            ]
+        })
+    });
+}
 
 
 /***/ }),
@@ -611,7 +707,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,955,703,943], () => (__webpack_exec__(8853)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,612,703], () => (__webpack_exec__(8853)));
 module.exports = __webpack_exports__;
 
 })();
