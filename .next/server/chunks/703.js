@@ -16,11 +16,11 @@ exports.modules = {
 /* unused harmony export getMediaPath */
 const getBasePath = ()=>{
     if (false) {}
-    if (true) {
-        return  false || "";
-    }
-    const baseElement = document.querySelector("base");
-    return baseElement ? baseElement.getAttribute("href")?.replace(/\/$/, "") || "" :  false || "";
+    const basePath =  false || "";
+    // For client-side rendering
+    if (false) {}
+    // For server-side rendering
+    return basePath;
 };
 const getMediaPath = (path)=>{
     const basePath = getBasePath();

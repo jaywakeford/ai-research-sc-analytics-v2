@@ -3,12 +3,15 @@ export const getBasePath = () => {
     return '';
   }
   
-  if (typeof window === 'undefined') {
-    return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
+  // For client-side rendering
+  if (typeof window !== 'undefined') {
+    return window.location.pathname.startsWith(basePath) ? basePath : '';
   }
   
-  const baseElement = document.querySelector('base');
-  return baseElement ? baseElement.getAttribute('href')?.replace(/\/$/, '') || '' : process.env.NEXT_PUBLIC_BASE_PATH || '';
+  // For server-side rendering
+  return basePath;
 };
 
 export const getMediaPath = (path: string): string => {

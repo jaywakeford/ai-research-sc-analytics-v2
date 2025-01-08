@@ -373,7 +373,7 @@ var AudioPlayer = __webpack_require__(2115);
 const videos = [
     {
         title: "Colleague to Colleague Deep Analytics",
-        videoUrl: "colleague-to-colleague-deep-analytics.mp4",
+        videoUrl: "balanced-scorecard.mp4",
         description: "Advanced analytics platform facilitating peer-to-peer collaboration and deep insights sharing.",
         technologies: [
             "Analytics",
@@ -435,7 +435,7 @@ const videos = [
     },
     {
         title: "Opportunity Gaps Automation",
-        videoUrl: "opportunity-gaps-automation.mp4",
+        videoUrl: "bottomup-task-management-system.mp4",
         description: "AI-driven system for identifying and analyzing supply chain optimization opportunities.",
         technologies: [
             "AI/ML",
@@ -451,7 +451,7 @@ const videos = [
     },
     {
         title: "Real-Time Analytics Dashboard",
-        videoUrl: "reporting-insights-rapid-demo.mp4",
+        videoUrl: "balanced-scorecard.mp4",
         description: "Dynamic reporting system with real-time insights and predictive analytics.",
         technologies: [
             "Power BI",
@@ -1035,7 +1035,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,926,948,703,36], () => (__webpack_exec__(8345)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,926,948,703,943], () => (__webpack_exec__(8345)));
 module.exports = __webpack_exports__;
 
 })();

@@ -90,11 +90,11 @@ var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 ;// CONCATENATED MODULE: ./src/utils/paths.ts
 const getBasePath = ()=>{
     if (false) {}
-    if (true) {
-        return  false || "";
-    }
-    const baseElement = document.querySelector("base");
-    return baseElement ? baseElement.getAttribute("href")?.replace(/\/$/, "") || "" :  false || "";
+    const basePath =  false || "";
+    // For client-side rendering
+    if (false) {}
+    // For server-side rendering
+    return basePath;
 };
 const getMediaPath = (path)=>{
     const basePath = getBasePath();
@@ -134,20 +134,21 @@ const metadata = {
 };
 function RootLayout({ children }) {
     const basePath = getBasePath();
-    const baseHref = basePath ? `${basePath}/` : "/";
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("html", {
         lang: "en",
-        className: (target_path_src_app_layout_tsx_import_Inter_arguments_subsets_latin_variableName_inter_default()).className,
+        className: `${(target_path_src_app_layout_tsx_import_Inter_arguments_subsets_latin_variableName_inter_default()).className} dark`,
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx("head", {
-                children: /*#__PURE__*/ jsx_runtime_.jsx("base", {
-                    href: baseHref
+                children: /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                    name: "viewport",
+                    content: "width=device-width, initial-scale=1"
                 })
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("body", {
+                className: "min-h-screen bg-gradient-to-b from-gray-900 to-indigo-900",
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("nav", {
-                        className: "bg-gray-900 border-b border-gray-800",
+                        className: "bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                             className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                             children: /*#__PURE__*/ jsx_runtime_.jsx("div", {

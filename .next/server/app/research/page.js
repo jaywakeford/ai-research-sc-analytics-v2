@@ -331,8 +331,8 @@ var react_ = __webpack_require__(8038);
 var react_default = /*#__PURE__*/__webpack_require__.n(react_);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/pdfjs.js
 var pdfjs = __webpack_require__(7540);
-// EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Document.js + 1 modules
-var Document = __webpack_require__(9114);
+// EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Document.js + 2 modules
+var Document = __webpack_require__(1315);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Page.js + 12 modules
 var Page = __webpack_require__(8790);
 // EXTERNAL MODULE: ./src/utils/paths.ts
@@ -510,7 +510,7 @@ var AudioPlayer = __webpack_require__(2115);
 
 
 const ResearchPage = ()=>{
-    const [activeTab, setActiveTab] = react_default().useState("powerbi");
+    const [activeTab, setActiveTab] = react_default().useState("agents");
     const [isLoading, setIsLoading] = react_default().useState(true);
     react_default().useEffect(()=>{
         setIsLoading(true);
@@ -523,11 +523,6 @@ const ResearchPage = ()=>{
         activeTab
     ]);
     const papers = {
-        powerbi: {
-            title: "Power BI Analytics Development",
-            pdfPath: "powerbi-analytics-development-a.pdf",
-            audioPath: "power-bi-analytics-for-at-the-money-trading.mp3"
-        },
         agents: {
             title: "AI Agent Systems Research",
             pdfPath: "agents-research-b.pdf",
@@ -566,12 +561,6 @@ const ResearchPage = ()=>{
                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                         className: "jsx-18cba3082f874def" + " " + "flex flex-wrap justify-center gap-4 mb-12",
                         children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                                onClick: ()=>setActiveTab("powerbi"),
-                                className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
-              ${activeTab === "powerbi" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`,
-                                children: "Power BI Analytics Development"
-                            }),
                             /*#__PURE__*/ jsx_runtime_.jsx("button", {
                                 onClick: ()=>setActiveTab("agents"),
                                 className: "jsx-18cba3082f874def" + " " + `px-6 py-3 rounded-lg text-sm font-medium transition-colors
@@ -672,7 +661,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,948,703,36], () => (__webpack_exec__(8853)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,743,948,703,943], () => (__webpack_exec__(8853)));
 module.exports = __webpack_exports__;
 
 })();

@@ -6,6 +6,11 @@ const nextConfig = {
   },
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  trailingSlash: true,
+  typescript: {
+    // Ensure TypeScript is used for all .ts/.tsx files
+    ignoreBuildErrors: false,
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(pdf|mp3|mp4)$/,
@@ -22,8 +27,13 @@ const nextConfig = {
       canvas: false,
     };
 
+    // Ensure TypeScript files are processed
+    config.resolve.extensions = ['.ts', '.tsx', '.js', '.jsx', '.json'];
+
     return config;
   },
+  // Enable source maps in production
+  productionBrowserSourceMaps: true,
 }
 
 module.exports = nextConfig 
