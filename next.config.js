@@ -8,17 +8,22 @@ const nextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   webpack: (config) => {
     config.module.rules.push({
-      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|pdf)(\?.*)?$/,
+      test: /\.(pdf|mp3|mp4)$/,
       type: 'asset/resource',
       generator: {
-        filename: 'static/media/[name][ext]'
-      }
+        filename: 'media/[path][name][ext]',
+      },
     });
 
+    // Handle canvas module
     config.resolve.alias.canvas = false;
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      canvas: false,
+    };
 
     return config;
-  }
-};
+  },
+}
 
-module.exports = nextConfig; 
+module.exports = nextConfig 

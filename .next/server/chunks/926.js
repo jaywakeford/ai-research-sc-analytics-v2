@@ -14051,7 +14051,7 @@ exports.toPlaylists = toPlaylists;
 
 /***/ }),
 
-/***/ 6525:
+/***/ 3878:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var getUint64 = (__webpack_require__(5280).getUint64);
@@ -14235,7 +14235,7 @@ var codecs_js = __webpack_require__(6855);
 var mediaTypes_js = __webpack_require__(1181);
 var byteHelpers = __webpack_require__(3501);
 var mpdParser = __webpack_require__(3241);
-var parseSidx = __webpack_require__(6525);
+var parseSidx = __webpack_require__(3878);
 var id3Helpers = __webpack_require__(7611);
 var containers = __webpack_require__(4987);
 var clock = __webpack_require__(2395);

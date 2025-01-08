@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import { getBasePath } from '@/utils/paths';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +16,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const basePath = getBasePath();
+  const baseHref = basePath ? `${basePath}/` : '/';
 
   return (
     <html lang="en" className={inter.className}>
       <head>
-        <base href={`${basePath}/`} />
+        <base href={baseHref} />
       </head>
       <body>
         <nav className="bg-gray-900 border-b border-gray-800">

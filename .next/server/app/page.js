@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
         }]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 4053)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 7099)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
 'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8275)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\not-found.tsx"],
           
         }
@@ -283,6 +283,17 @@ __webpack_require__.r(__webpack_exports__);
       },
     })
   
+
+/***/ }),
+
+/***/ 4248:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23))
 
 /***/ }),
 
@@ -743,7 +754,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,451,612,703,817], () => (__webpack_exec__(6822)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,451,948,703,817], () => (__webpack_exec__(6822)));
 module.exports = __webpack_exports__;
 
 })();

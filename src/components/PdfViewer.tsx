@@ -20,6 +20,15 @@ export default function PdfViewer({ src }: PdfViewerProps) {
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const pdfUrl = getPdfPath(src);
+
+  React.useEffect(() => {
+    // Reset state when src changes
+    setPageNumber(1);
+    setError(null);
+    setIsLoading(true);
+  }, [src]);
+
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
     setIsLoading(false);
@@ -27,7 +36,7 @@ export default function PdfViewer({ src }: PdfViewerProps) {
   }
 
   function onDocumentLoadError(error: Error) {
-    console.error('Error loading PDF:', error, 'Source:', getPdfPath(src));
+    console.error('Error loading PDF:', error, 'Source:', pdfUrl);
     setError(error);
     setIsLoading(false);
   }

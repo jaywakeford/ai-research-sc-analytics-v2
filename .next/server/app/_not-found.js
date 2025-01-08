@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 165;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 8038:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/react");
 
 /***/ }),
@@ -15,6 +15,7 @@ module.exports = require("next/dist/compiled/react");
 /***/ 8704:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/react-dom/server-rendering-stub");
 
 /***/ }),
@@ -22,6 +23,7 @@ module.exports = require("next/dist/compiled/react-dom/server-rendering-stub");
 /***/ 7897:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/react-server-dom-webpack/client");
 
 /***/ }),
@@ -29,6 +31,7 @@ module.exports = require("next/dist/compiled/react-server-dom-webpack/client");
 /***/ 6786:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/react/jsx-runtime");
 
 /***/ }),
@@ -36,6 +39,7 @@ module.exports = require("next/dist/compiled/react/jsx-runtime");
 /***/ 5868:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/server/app-render/app-render");
 
 /***/ }),
@@ -43,6 +47,7 @@ module.exports = require("next/dist/server/app-render/app-render");
 /***/ 1844:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/server/app-render/get-segment-param");
 
 /***/ }),
@@ -50,6 +55,7 @@ module.exports = require("next/dist/server/app-render/get-segment-param");
 /***/ 6624:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/server/future/helpers/interception-routes");
 
 /***/ }),
@@ -57,6 +63,7 @@ module.exports = require("next/dist/server/future/helpers/interception-routes");
 /***/ 5281:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/server/future/route-modules/route-module");
 
 /***/ }),
@@ -64,6 +71,7 @@ module.exports = require("next/dist/server/future/route-modules/route-module");
 /***/ 7085:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/app-router-context");
 
 /***/ }),
@@ -71,6 +79,7 @@ module.exports = require("next/dist/shared/lib/app-router-context");
 /***/ 199:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/hash");
 
 /***/ }),
@@ -78,6 +87,7 @@ module.exports = require("next/dist/shared/lib/hash");
 /***/ 9569:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/hooks-client-context");
 
 /***/ }),
@@ -85,6 +95,7 @@ module.exports = require("next/dist/shared/lib/hooks-client-context");
 /***/ 7160:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router-context");
 
 /***/ }),
@@ -92,6 +103,7 @@ module.exports = require("next/dist/shared/lib/router-context");
 /***/ 893:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix");
 
 /***/ }),
@@ -99,6 +111,7 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix");
 /***/ 2336:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/format-url");
 
 /***/ }),
@@ -106,6 +119,7 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url");
 /***/ 7887:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/handle-smooth-scroll");
 
 /***/ }),
@@ -113,6 +127,7 @@ module.exports = require("next/dist/shared/lib/router/utils/handle-smooth-scroll
 /***/ 8735:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/is-bot");
 
 /***/ }),
@@ -120,6 +135,7 @@ module.exports = require("next/dist/shared/lib/router/utils/is-bot");
 /***/ 120:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/is-local-url");
 
 /***/ }),
@@ -127,6 +143,7 @@ module.exports = require("next/dist/shared/lib/router/utils/is-local-url");
 /***/ 8231:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/parse-path");
 
 /***/ }),
@@ -134,6 +151,7 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path");
 /***/ 3750:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash");
 
 /***/ }),
@@ -141,6 +159,7 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 /***/ 982:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/resolve-href");
 
 /***/ }),
@@ -148,6 +167,7 @@ module.exports = require("next/dist/shared/lib/router/utils/resolve-href");
 /***/ 9618:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/server-inserted-html");
 
 /***/ }),
@@ -155,6 +175,7 @@ module.exports = require("next/dist/shared/lib/server-inserted-html");
 /***/ 8423:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/utils");
 
 /***/ }),
@@ -162,6 +183,7 @@ module.exports = require("next/dist/shared/lib/utils");
 /***/ 3249:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   GlobalError: () => (/* reexport safe */ next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_1__.GlobalError),
@@ -199,7 +221,7 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 4053)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 7099)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
 'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8275)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\not-found.tsx"],
           
         }
@@ -228,6 +250,17 @@ __webpack_require__.r(__webpack_exports__);
     })
   
 
+/***/ }),
+
+/***/ 6839:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
+
 /***/ })
 
 };
@@ -237,7 +270,7 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,612], () => (__webpack_exec__(3249)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,948], () => (__webpack_exec__(3249)));
 module.exports = __webpack_exports__;
 
 })();

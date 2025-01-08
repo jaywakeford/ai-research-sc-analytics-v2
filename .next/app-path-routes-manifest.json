@@ -1,7 +1,7 @@
 {
-  "/page": "/",
   "/_not-found": "/_not-found",
+  "/page": "/",
   "/portfolio/page": "/portfolio",
-  "/research/page": "/research",
-  "/supply-chain/page": "/supply-chain"
+  "/supply-chain/page": "/supply-chain",
+  "/research/page": "/research"
 }

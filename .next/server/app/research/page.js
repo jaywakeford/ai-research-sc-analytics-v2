@@ -271,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 4053)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 7099)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\layout.tsx"],
 'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 8275)), "D:\\Projects\\webpage\\ai-research-sc-analytics-main\\jw-ai-sc-de\\src\\app\\not-found.tsx"],
           
         }
@@ -332,7 +332,7 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react_);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/pdfjs.js
 var pdfjs = __webpack_require__(7540);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Document.js + 1 modules
-var Document = __webpack_require__(3878);
+var Document = __webpack_require__(9114);
 // EXTERNAL MODULE: ./node_modules/react-pdf/dist/esm/Page.js + 12 modules
 var Page = __webpack_require__(8790);
 // EXTERNAL MODULE: ./src/utils/paths.ts
@@ -357,13 +357,22 @@ function PdfViewer({ src }) {
     const [pageNumber, setPageNumber] = (0,react_.useState)(1);
     const [error, setError] = (0,react_.useState)(null);
     const [isLoading, setIsLoading] = (0,react_.useState)(true);
+    const pdfUrl = (0,paths/* getPdfPath */.PA)(src);
+    react_default().useEffect(()=>{
+        // Reset state when src changes
+        setPageNumber(1);
+        setError(null);
+        setIsLoading(true);
+    }, [
+        src
+    ]);
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
         setIsLoading(false);
         setError(null);
     }
     function onDocumentLoadError(error) {
-        console.error("Error loading PDF:", error, "Source:", (0,paths/* getPdfPath */.PA)(src));
+        console.error("Error loading PDF:", error, "Source:", pdfUrl);
         setError(error);
         setIsLoading(false);
     }
@@ -630,50 +639,6 @@ const ResearchPage = ()=>{
 
 /***/ }),
 
-/***/ 2115:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Z: () => (/* binding */ AudioPlayer)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6786);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8038);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6679);
-/* harmony import */ var _utils_paths__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2703);
-/* harmony import */ var react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2438);
-/* harmony import */ var react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_h5_audio_player_lib_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-/* __next_internal_client_entry_do_not_use__ default auto */ 
-
-
-
-
-function AudioPlayer({ src, title }) {
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: "w-full",
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .ZP, {
-            src: (0,_utils_paths__WEBPACK_IMPORTED_MODULE_4__/* .getAudioPath */ .lq)(src),
-            autoPlay: false,
-            showJumpControls: true,
-            layout: "horizontal",
-            customProgressBarSection: [
-                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.CURRENT_TIME,
-                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.PROGRESS_BAR,
-                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.DURATION
-            ],
-            customControlsSection: [
-                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.MAIN_CONTROLS,
-                react_h5_audio_player__WEBPACK_IMPORTED_MODULE_2__/* .RHAP_UI */ .s2.VOLUME_CONTROLS
-            ]
-        })
-    });
-}
-
-
-/***/ }),
-
 /***/ 7398:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -707,7 +672,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,612,703], () => (__webpack_exec__(8853)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,948,703,36], () => (__webpack_exec__(8853)));
 module.exports = __webpack_exports__;
 
 })();

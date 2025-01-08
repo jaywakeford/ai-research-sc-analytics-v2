@@ -31,11 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          lfs: true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: npm
+          node-version: "18"
+          cache: 'npm'
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
@@ -43,7 +45,7 @@ jobs:
       - name: Build with Next.js
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
 
@@ -57,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3

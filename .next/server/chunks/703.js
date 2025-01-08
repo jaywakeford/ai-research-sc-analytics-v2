@@ -15,6 +15,7 @@ exports.modules = {
 /* harmony export */ });
 /* unused harmony export getMediaPath */
 const getBasePath = ()=>{
+    if (false) {}
     if (true) {
         return  false || "";
     }
