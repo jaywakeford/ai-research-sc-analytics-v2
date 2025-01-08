@@ -180,7 +180,7 @@ module.exports = require("next/dist/shared/lib/utils");
 
 /***/ }),
 
-/***/ 3774:
+/***/ 8345:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -252,17 +252,6 @@ __webpack_require__.r(__webpack_exports__);
       },
     })
   
-
-/***/ }),
-
-/***/ 8623:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
 
 /***/ }),
 
@@ -1046,7 +1035,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,926,955,115], () => (__webpack_exec__(3774)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,926,955,703,943], () => (__webpack_exec__(8345)));
 module.exports = __webpack_exports__;
 
 })();

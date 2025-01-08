@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { getPdfPath } from '@/utils/paths';
+import { getPdfPath, getBasePath } from '@/utils/paths';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 // Set worker path
-pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `${getBasePath()}/pdf.worker.min.js`;
 
 interface PdfViewerProps {
   src: string;

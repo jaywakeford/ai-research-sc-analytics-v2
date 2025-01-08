@@ -227,7 +227,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 6358:
+/***/ 8853:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -302,17 +302,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8623:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
-
-/***/ }),
-
 /***/ 6391:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -361,7 +350,7 @@ var TextLayer = __webpack_require__(8801);
 
 
 // Set worker path
-pdfjs["default"].GlobalWorkerOptions.workerSrc = `${"/ai-research-sc-analytics-v2" || 0}/pdf.worker.min.js`;
+pdfjs["default"].GlobalWorkerOptions.workerSrc = `${(0,paths/* getBasePath */.bv)()}/pdf.worker.min.js`;
 function PdfViewer({ src }) {
     const [numPages, setNumPages] = (0,react_.useState)(0);
     const [pageNumber, setPageNumber] = (0,react_.useState)(1);
@@ -622,7 +611,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,955,115], () => (__webpack_exec__(6358)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,740,369,252,955,703,943], () => (__webpack_exec__(8853)));
 module.exports = __webpack_exports__;
 
 })();

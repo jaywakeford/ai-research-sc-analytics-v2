@@ -220,7 +220,7 @@ module.exports = require("next/dist/shared/lib/utils/warn-once");
 
 /***/ }),
 
-/***/ 1097:
+/***/ 7297:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -295,13 +295,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8623:
+/***/ 826:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
 
 /***/ }),
@@ -417,49 +417,6 @@ function PortfolioPage() {
 
 /***/ }),
 
-/***/ 2703:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PA: () => (/* binding */ getPdfPath),
-/* harmony export */   Yo: () => (/* binding */ getVideoPath),
-/* harmony export */   al: () => (/* binding */ getImagePath),
-/* harmony export */   lq: () => (/* binding */ getAudioPath)
-/* harmony export */ });
-/* unused harmony exports getBasePath, getMediaPath */
-const getBasePath = ()=>{
-    return "/ai-research-sc-analytics-v2" || 0;
-};
-const getMediaPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/${cleanPath}`;
-};
-const getImagePath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/images/${cleanPath}`;
-};
-const getPdfPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/pdfs/${cleanPath}`;
-};
-const getAudioPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/audio/${cleanPath}`;
-};
-const getVideoPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/videos/${cleanPath}`;
-};
-
-
-/***/ }),
-
 /***/ 6576:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -493,7 +450,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [735,451,955,817], () => (__webpack_exec__(1097)));
+var __webpack_exports__ = __webpack_require__.X(0, [735,451,955,703,817], () => (__webpack_exec__(7297)));
 module.exports = __webpack_exports__;
 
 })();

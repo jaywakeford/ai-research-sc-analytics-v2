@@ -1,11 +1,22 @@
-"use strict";
-exports.id = 115;
-exports.ids = [115];
+exports.id = 943;
+exports.ids = [943];
 exports.modules = {
+
+/***/ 826:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1232, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2987, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 831, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6926, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4282, 23))
+
+/***/ }),
 
 /***/ 2115:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Z: () => (/* binding */ AudioPlayer)
 /* harmony export */ });
@@ -42,48 +53,6 @@ function AudioPlayer({ src, title }) {
         })
     });
 }
-
-
-/***/ }),
-
-/***/ 2703:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PA: () => (/* binding */ getPdfPath),
-/* harmony export */   Yo: () => (/* binding */ getVideoPath),
-/* harmony export */   al: () => (/* binding */ getImagePath),
-/* harmony export */   lq: () => (/* binding */ getAudioPath)
-/* harmony export */ });
-/* unused harmony exports getBasePath, getMediaPath */
-const getBasePath = ()=>{
-    return "/ai-research-sc-analytics-v2" || 0;
-};
-const getMediaPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/${cleanPath}`;
-};
-const getImagePath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/images/${cleanPath}`;
-};
-const getPdfPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/pdfs/${cleanPath}`;
-};
-const getAudioPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/audio/${cleanPath}`;
-};
-const getVideoPath = (path)=>{
-    const basePath = getBasePath();
-    const cleanPath = path.replace(/^\/+/, "");
-    return `${basePath}/media/videos/${cleanPath}`;
-};
 
 
 /***/ })
